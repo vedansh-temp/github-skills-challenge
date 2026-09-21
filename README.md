@@ -115,3 +115,30 @@ Events consumed: 0
 Detected Events:
 
 we can see 2 anomalies detected through the pipeline in the records processed
+
+
+
+######################   Part 4(task 6)  #######################
+
+when we try to run aiops pipeline test it doesnt run 
+python tests/test_aiops_pipeline.py
+Traceback (most recent call last):
+  File "/workspaces/github-skills-challenge/tests/test_aiops_pipeline.py", line 3, in <module>
+    from src.anomaly_detector import AnomalyDetector
+ModuleNotFoundError: No module named 'src'
+
+to rectify this:- we chnage the path
+PYTHONPATH=.:src python -m pytest tests/test_aiops_pipeline.py --verbose
+
+O/P
+====================================== test session starts ======================================
+platform linux -- Python 3.13.15, pytest-8.4.1, pluggy-1.6.0 -- /workspaces/github-skills-challenge/.venv/calculations/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/github-skills-challenge
+plugins: cov-7.1.0
+collected 4 items                                                                               
+
+tests/test_aiops_pipeline.py::test_normal_record_is_not_anomaly PASSED                    [ 25%]
+tests/test_aiops_pipeline.py::test_anomalous_record_is_detected PASSED                    [ 50%]
+tests/test_aiops_pipeline.py::test_producer_publishes_event PASSED                        [ 75%]
+tests/test_aiops_pipeline.py::test_consumer_receives_event PASSED                         [100%]
