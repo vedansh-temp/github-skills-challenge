@@ -97,6 +97,7 @@ TOTAL                        96     40    58%
 
 
 Total anomalies detected: 18 in anomaly_detector.
+<img width="1081" height="721" alt="Screenshot (45)" src="https://github.com/user-attachments/assets/bfb88afb-60ea-4b1e-baff-831c9aef6a8d" />
 
 
 
