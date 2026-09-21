@@ -17,7 +17,7 @@ Good luck!
 &copy; 2025 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
 
 
-Part 1
+#############################  Part 1     ########################################
 
 The service that is being monitored is anomaly detection 
 suing data like this------------record = {
@@ -35,7 +35,7 @@ further there are services for kafka producer and consumer
 and are being tested in test/ folder
 
 
-Part 2
+#############################  Part 2    ########################################
 
     in the data/service_data.json
     we have data such as eg:- {
@@ -58,3 +58,42 @@ Part 2
     message - related to the log
 
     also the values of response time being greater than 600 gives log level as "INFO"
+
+
+    #############################  Part 3    ########################################
+
+    after running the test_aiops_pipeline.py
+    "python -m pytest --cov=src --verbose"
+=========================================================== test session starts ===========================================================
+platform linux -- Python 3.13.15, pytest-8.4.1, pluggy-1.6.0 -- /usr/local/bin/python
+cachedir: .pytest_cache
+rootdir: /workspaces/github-skills-challenge
+plugins: cov-7.1.0
+collected 8 items                                                                                                                         
+
+tests/calculations_test.py::test_area_of_circle_positive_radius PASSED                                                              [ 12%]
+tests/calculations_test.py::test_area_of_circle_zero_radius PASSED                                                                  [ 25%]
+tests/calculations_test.py::test_get_nth_fibonacci_zero PASSED                                                                      [ 37%]
+tests/calculations_test.py::test_get_nth_fibonacci_one PASSED                                                                       [ 50%]
+tests/test_aiops_pipeline.py::test_normal_record_is_not_anomaly PASSED                                                              [ 62%]
+tests/test_aiops_pipeline.py::test_anomalous_record_is_detected PASSED                                                              [ 75%]
+tests/test_aiops_pipeline.py::test_producer_publishes_event PASSED                                                                  [ 87%]
+tests/test_aiops_pipeline.py::test_consumer_receives_event PASSED                                                                   [100%]
+
+============================================================= tests coverage ==============================================================
+____________________________________________ coverage: platform linux, python 3.13.15-final-0 _____________________________________________
+
+Name                      Stmts   Miss  Cover
+---------------------------------------------
+src/aiops_pipeline.py        37     29    22%
+src/anomaly_detector.py      18      3    83%
+src/calculations.py          16      6    62%
+src/event_consumer.py         6      0   100%
+src/event_producer.py         9      1    89%
+src/event_topic.py           10      1    90%
+---------------------------------------------
+TOTAL                        96     40    58%
+============================================================ 8 passed in 0.47s
+
+
+total anomaly detected 18 in anomaly_detector

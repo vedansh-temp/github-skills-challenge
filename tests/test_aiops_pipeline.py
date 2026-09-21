@@ -5,7 +5,7 @@ from src.aiops_pipeline import run_pipeline
 from src.event_consumer import EventConsumer
 from src.event_producer import EventProducer
 from src.event_topic import EventTopic
-
+print("hi")
 
 def test_normal_record_is_not_anomaly():
     detector = AnomalyDetector()
