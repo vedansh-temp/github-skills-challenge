@@ -19,8 +19,8 @@ Good luck!
 
 #############################  Part 1     ########################################
 
-The service that is being monitored is anomaly detection 
-suing data like this------------record = {
+The service being monitored is anomaly detection,
+using data like this------------record = {
         "timestamp": "2026-09-20T10:00:00",
         "service": "payment-service",
         "response_time_ms": 120,
@@ -29,16 +29,16 @@ suing data like this------------record = {
         "log_level": "INFO",
         "message": "Payment request processed successfully"
     }
-    by checking these data provided
-further there are services for kafka producer and consumer
+    by checking the data provided.
+  Furthermore, there are services for the Kafka producer and consumer.
 
-and are being tested in test/ folder
+  They are being tested in the test/ folder.
 
 
 #############################  Part 2    ########################################
 
-    in the data/service_data.json
-    we have data such as eg:- {
+    In data/service_data.json,
+    we have data such as, for example: {
     "timestamp": "2026-09-20T10:00:00",
     "service": "payment-service",
     "response_time_ms": 120,
@@ -48,21 +48,21 @@ and are being tested in test/ folder
     "message": "Payment request processed successfully"
   }
 
-  which tells there are fields such as
-    timestamps - tell the time of the log
-    service - type of service
+  which shows that there are fields such as:
+    timestamp - tells the time of the log
+    service - indicates the type of service
     response time
-    cpu_percent - tell cpu usage in percent
-    memory percent - tells memory used in percent
+    cpu_percent - indicates CPU usage as a percentage
+    memory percent - indicates memory usage as a percentage
     log level
-    message - related to the log
+    message - relates to the log
 
-    also the values of response time being greater than 600 gives log level as "INFO"
+    Also, response time values greater than 600 give the log level "INFO".
 
 
     #############################  Part 3    ########################################
 
-    after running the test_aiops_pipeline.py
+    After running test_aiops_pipeline.py:
     "python -m pytest --cov=src --verbose"
 =========================================================== test session starts ===========================================================
 platform linux -- Python 3.13.15, pytest-8.4.1, pluggy-1.6.0 -- /usr/local/bin/python
@@ -96,14 +96,14 @@ TOTAL                        96     40    58%
 ============================================================ 8 passed in 0.47s
 
 
-total anomaly detected 18 in anomaly_detector
+Total anomalies detected: 18 in anomaly_detector.
 
 
 
 #####################################   Part 4 ######################################
 
-after executing the aiops_pipeline.py 
--o/p
+After executing aiops_pipeline.py:
+- Output:
 python src/aiops_pipeline.py
 ==================================================
 AIOps Pipeline Result
@@ -114,20 +114,20 @@ Events consumed: 0
 
 Detected Events:
 
-we can see 2 anomalies detected through the pipeline in the records processed
+We can see that 2 anomalies were detected by the pipeline in the processed records.
 
 
 
 ######################   Part 4(task 6)  #######################
 
-when we try to run aiops pipeline test it doesnt run 
+When we try to run the AIOps pipeline test, it does not run:
 python tests/test_aiops_pipeline.py
 Traceback (most recent call last):
   File "/workspaces/github-skills-challenge/tests/test_aiops_pipeline.py", line 3, in <module>
     from src.anomaly_detector import AnomalyDetector
 ModuleNotFoundError: No module named 'src'
 
-to rectify this:- we chnage the path
+To rectify this, we change the path:
 PYTHONPATH=.:src python -m pytest tests/test_aiops_pipeline.py --verbose
 
 O/P
