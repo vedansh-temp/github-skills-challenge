@@ -97,3 +97,21 @@ TOTAL                        96     40    58%
 
 
 total anomaly detected 18 in anomaly_detector
+
+
+
+#####################################   Part 4 ######################################
+
+after executing the aiops_pipeline.py 
+-o/p
+python src/aiops_pipeline.py
+==================================================
+AIOps Pipeline Result
+==================================================
+Records processed: 10
+Anomalies detected: 2
+Events consumed: 0
+
+Detected Events:
+
+we can see 2 anomalies detected through the pipeline in the records processed
