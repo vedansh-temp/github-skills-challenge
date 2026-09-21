@@ -31,3 +31,30 @@ suing data like this------------record = {
     }
     by checking these data provided
 further there are services for kafka producer and consumer
+
+and are being tested in test/ folder
+
+
+Part 2
+
+    in the data/service_data.json
+    we have data such as eg:- {
+    "timestamp": "2026-09-20T10:00:00",
+    "service": "payment-service",
+    "response_time_ms": 120,
+    "cpu_percent": 42,
+    "memory_percent": 51,
+    "log_level": "INFO",
+    "message": "Payment request processed successfully"
+  }
+
+  which tells there are fields such as
+    timestamps - tell the time of the log
+    service - type of service
+    response time
+    cpu_percent - tell cpu usage in percent
+    memory percent - tells memory used in percent
+    log level
+    message - related to the log
+
+    also the values of response time being greater than 600 gives log level as "INFO"
